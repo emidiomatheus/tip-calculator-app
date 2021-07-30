@@ -1,0 +1,273 @@
+main {
+    background: var(--light-grayish-cyan);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 5%;
+    margin-bottom: 6rem;
+}
+
+.container {
+    background: var(--white);
+    padding: 3rem;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    border-radius: 1.4rem;
+
+    width: min(60%, 90rem);
+    max-width: 800rem;
+    min-height: 50%
+}
+
+div.calculate {
+    display: flex;
+    flex-direction: column;
+    margin-right: 3rem;
+    height: 100%
+}
+
+.calculate div:not(:last-child) {
+    margin-bottom: 3rem;
+}
+
+div.people, div.bill {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+}
+
+img.icon {
+    position: absolute;
+    top: 60%;
+    left: 5%
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+div.tip-value {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50% 50%;
+    gap: 1rem;
+}
+
+label, h4  {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: var(--very-dark-grayish-cyan)
+}
+
+input {
+    background: var(--very-light-grayish-cyan);
+    border: none;
+    border-radius: 4px;
+    padding: 0 1rem;
+    height: 4rem;
+
+    color: var(--very-dark-cyan);
+    font-size: 2.4rem;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    text-align: end;
+
+    width: 100%;
+}
+
+input::placeholder {
+    color: var(--dark-grayish-cyan);
+}
+
+input.percentage {
+    all: unset;
+    background: var(--very-dark-cyan);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    height: 4rem;
+    font-size: clamp(1.8rem, 1.6rem, 24px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: all .2s;
+}
+
+input.percentage:hover:not(input.percentage:checked),
+input.percentage:focus:not(input.percentage:checked) {
+    filter: brightness(1.2)
+}
+
+input.percentage:checked {
+    background: var(--strong-cyan);
+}
+
+input.percentage.five::before {
+    content: '5%';
+    color: var(--white);
+}
+
+input.percentage.ten::before {
+    content: '10%';
+    color: var(--white);
+}
+
+input.percentage.fifteen::before {
+    content: '15%';
+    color: var(--white);
+}
+
+input.percentage.twenty-five::before {
+    content: '25%';
+    color: var(--white);
+}
+
+input.percentage.fifty::before {
+    content: '50%';
+    color: var(--white);
+}
+
+input.percentage:checked::before {
+    color: var(--very-dark-cyan);
+}
+
+input#custom {
+    font-size: clamp(1.8rem, 1.6rem, 24px);
+    text-align: center;
+}
+
+input#custom::placeholder {
+    color: var(--very-dark-grayish-cyan)
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+div.tip-value > input {
+    width: 100%;
+}
+
+div#total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem;
+    width: 100%;
+    height: 100%;
+
+    background: var(--very-dark-cyan);
+    border-radius: 1.4rem
+}
+
+div#total table {
+    width: 100%;
+    color: var(--white);
+}
+
+div#total table tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+div#total table tr:nth-child(1) {
+    margin-bottom: 2rem;
+}
+
+div#total table tr > td:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div#total table tr > td:nth-child(1) > small {
+    font-size: 1.2rem;
+    color: var(--dark-grayish-cyan);
+}
+
+div#total table tr > td:nth-child(2) {
+    text-align: end;
+}
+
+div#total table tr > td > span {
+    font-size: 3rem;
+    color: var(--strong-cyan);
+}
+
+input#reset {
+    width: 100%;
+    height: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    background: var(--strong-cyan);
+
+    cursor: pointer;
+    transition: background .2s;
+}
+
+input#reset:hover {
+    background: var(--light-grayish-cyan);
+}
+
+input#reset:disabled {
+    opacity: 0.2;
+    filter: brightness(2.4);
+}
+
+@media (max-width: 900px) {
+    body {
+        height: auto
+    }
+
+    .logo {
+        width: 18vw;
+        max-width: 80px;
+        margin: 3rem 0;
+    }
+
+    .container {
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        gap: 3rem;
+    }
+
+    div.calculate {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    form {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    div#total {
+        max-width: 500px;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <img class="logo" src="./images/logo.svg" alt="Splitter" />
+      <div class="container">
+        <div class="calculate" onsubmit="Form.submit()">
+          <form id="calculate" action="#">
+            <div class="bill">
+              <label for="bill">Bill</label>
+              <img
+                class="icon"
+                src="./images/icon-dollar.svg"
+                alt="Person icon"
+              />
+              <input type="number" name="bill" id="bill" placeholder="0" />
+            </div>
+
+            <div class="tip">
+              <h4>Select Tip %</h4>
+
+              <div class="tip-value">
+                <input
+                  class="percentage five"
+                  type="radio"
+                  name="percentage"
+                  value="5"
+                />
+                <input
+                  class="percentage ten"
+                  type="radio"
+                  name="percentage"
+                  value="10"
+                />
+                <input
+                  class="percentage fifteen"
+                  type="radio"
+                  name="percentage"
+                  value="15"
+                />
+                <input
+                  class="percentage twenty-five"
+                  type="radio"
+                  name="percentage"
+                  value="25"
+                />
+                <input
+                  class="percentage fifty"
+                  type="radio"
+                  name="percentage"
+                  value="50"
+                />
+                <input
+                  type="number"
+                  name="custom"
+                  id="custom"
+                  min="0"
+                  max="100"
+                  placeholder="Custom"
+                />
+              </div>
+
+              <div class="people">
+                <label for="number">Number of people</label>
+                <img
+                  class="icon"
+                  src="./images/icon-person.svg"
+                  alt="Person icon"
+                />
+                <input
+                  type="people"
+                  name="people"
+                  id="people"
+                  min="1"
+                  placeholder="0"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div id="total">
+          <table>
+            <tbody></tbody>
+          </table>
+          <input id="reset" form="calculate" type="reset" value="Reset" />
+        </div>
+      </div>
+    </main>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
