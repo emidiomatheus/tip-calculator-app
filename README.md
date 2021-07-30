@@ -1,4 +1,4 @@
-# Frontend Mentor - Tip calculator app solution
+# Tip calculator app solution
 
 ## Table of contents
 
@@ -43,6 +43,7 @@ input[type=number] {
    appearance: textfield;
 }
 ```
+
 ## Author
 
 - Frontend Mentor - [@emidiomatheus](https://www.frontendmentor.io/profile/emidiomatheus)
