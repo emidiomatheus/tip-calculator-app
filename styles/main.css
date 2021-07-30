@@ -63,12 +63,6 @@ div.tip-value {
     gap: 1rem;
 }
 
-label, h4  {
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-    color: var(--very-dark-grayish-cyan)
-}
-
 input {
     background: var(--very-light-grayish-cyan);
     border: none;

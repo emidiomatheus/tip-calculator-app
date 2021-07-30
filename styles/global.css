@@ -30,7 +30,7 @@ body {
     font-weight: 700;
 }
 
-.sr-only {
+label.sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -44,4 +44,10 @@ body {
 
 input#bill:focus, input#people:focus, input#custom:focus {
     border: 2px solid var(--strong-cyan)
+}
+
+label, h2  {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: var(--very-dark-grayish-cyan)
 }
