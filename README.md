@@ -1,4 +1,5 @@
 # Tip calculator app solution
+![](./screenshot.png)
 
 ## Table of contents
 
@@ -10,9 +11,6 @@
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
 - [Author](#author)
-
-## Overview
-![](./screenshot.jpg)
 
 ### Links
 
