@@ -5,6 +5,8 @@
     --dark-grayish-cyan: hsl(184, 14%, 56%);
     --light-grayish-cyan: hsl(185, 41%, 84%);
     --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --light-blue: #9fe8df;
+    --red: #de6c6c;
     --white: hsl(0, 0%, 100%);
 }
 
@@ -26,4 +28,20 @@ body {
     font-family: 'Space Mono', monospace;
     font-size: 1.6rem;
     font-weight: 700;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+input#bill:focus, input#people:focus, input#custom:focus {
+    border: 2px solid var(--strong-cyan)
 }

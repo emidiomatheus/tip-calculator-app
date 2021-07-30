@@ -3,6 +3,7 @@ const people = document.querySelector("#people");
 const customTip = document.getElementById("custom");
 const form = document.querySelector("#calculate");
 const reset = document.querySelector("#reset");
+const labelError = document.querySelector("label.error")
 
 const DOM = {
   tipValueDisplay: document.querySelector("#total table tbody"),
@@ -19,7 +20,7 @@ const DOM = {
         </tr>
         <tr>
             <td>Total <small>/ person</small></td>
-            <td><span id="total">$${total.toFixed(2)}</span></td>
+            <td><span id="totalAmount">$${total.toFixed(2)}</span></td>
         </tr>
         `;
 
@@ -83,6 +84,14 @@ const Utils = {
 const App = {
   init(tip) {
     DOM.updateValue(Utils.calculateTipAmount(tip), Utils.calculateTotal(tip));
+
+    if (bill.value != '' || people.value != '') {
+      if (reset.hasAttribute("disabled")) {
+        reset.removeAttribute("disabled")
+      } else {
+        reset.setAttribute("disabled")
+      }
+    }
   },
 
   reload(tip) {
@@ -100,6 +109,13 @@ customTip.addEventListener("keyup", (event) => {
   });
 
   people.addEventListener("input", () => {
+    if (people.value == 0 || people.value == '') {
+      people.classList.add('error')
+      labelError.classList.add('active')
+    } else if (people.value != 0 && people.value != '') {
+      people.classList.remove('error')
+      labelError.classList.remove('active')
+    }
     App.reload(tip);
   });
 });
@@ -114,6 +130,13 @@ Utils.percentage.forEach((tip) => {
     });
 
     people.addEventListener("input", () => {
+      if (people.value == 0 || people.value == '') {
+        people.classList.add('error')
+        labelError.classList.add('active')
+      } else if (people.value != 0 && people.value != '') {
+        people.classList.remove('error')
+        labelError.classList.remove('active')
+      }
       App.reload(tipValue);
     });
   });

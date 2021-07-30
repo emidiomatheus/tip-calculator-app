@@ -106,13 +106,17 @@ input.percentage {
     transition: all .2s;
 }
 
-input.percentage:hover:not(input.percentage:checked),
+input.percentage:hover,
 input.percentage:focus:not(input.percentage:checked) {
     filter: brightness(1.2)
 }
 
 input.percentage:checked {
     background: var(--strong-cyan);
+}
+
+input.percentage:checked:hover {
+    background: var(--light-blue);
 }
 
 input.percentage.five::before {
@@ -161,6 +165,26 @@ input[type=number]::-webkit-inner-spin-button {
 input[type=number] { 
    -moz-appearance: textfield;
    appearance: textfield;
+}
+
+input#people.error {
+    border: 2px solid var(--red);
+}
+
+label.error {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label.error::after {
+    content: "Can't be zero";
+    color: var(--red);
+    display: none;
+}
+
+label.error.active::after {
+    display: flex;
 }
 
 div.tip-value > input {
@@ -226,13 +250,14 @@ input#reset {
     transition: background .2s;
 }
 
-input#reset:hover {
-    background: var(--light-grayish-cyan);
+input#reset:hover:not(:disabled) {
+    background: var(--light-blue);
 }
 
 input#reset:disabled {
     opacity: 0.2;
     filter: brightness(2.4);
+    cursor: default;
 }
 
 @media (max-width: 900px) {

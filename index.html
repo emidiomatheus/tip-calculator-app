@@ -29,6 +29,9 @@
   <body>
     <main>
       <img class="logo" src="./images/logo.svg" alt="Splitter" />
+
+      <h1 class="sr-only">Splitter. The tip calculator</h1>
+
       <div class="container">
         <div class="calculate" onsubmit="Form.submit()">
           <form id="calculate" action="#">
@@ -46,36 +49,42 @@
               <h4>Select Tip %</h4>
 
               <div class="tip-value">
+                <label class="sr-only">5%</label>
                 <input
                   class="percentage five"
                   type="radio"
                   name="percentage"
                   value="5"
                 />
+                <label class="sr-only">10%</label>
                 <input
                   class="percentage ten"
                   type="radio"
                   name="percentage"
                   value="10"
                 />
+                <label class="sr-only">15%</label>
                 <input
                   class="percentage fifteen"
                   type="radio"
                   name="percentage"
                   value="15"
                 />
+                <label class="sr-only">25%</label>
                 <input
                   class="percentage twenty-five"
                   type="radio"
                   name="percentage"
                   value="25"
                 />
+                <label class="sr-only">50%</label>
                 <input
                   class="percentage fifty"
                   type="radio"
                   name="percentage"
                   value="50"
                 />
+                <label class="sr-only">Custom</label>
                 <input
                   type="number"
                   name="custom"
@@ -87,14 +96,14 @@
               </div>
 
               <div class="people">
-                <label for="number">Number of people</label>
+                <label class="error" for="people">Number of people</label>
                 <img
                   class="icon"
                   src="./images/icon-person.svg"
                   alt="Person icon"
                 />
                 <input
-                  type="people"
+                  type="number"
                   name="people"
                   id="people"
                   min="1"
@@ -109,7 +118,7 @@
           <table>
             <tbody></tbody>
           </table>
-          <input id="reset" form="calculate" type="reset" value="Reset" />
+          <input id="reset" form="calculate" type="reset" value="Reset" disabled/>
         </div>
       </div>
     </main>
